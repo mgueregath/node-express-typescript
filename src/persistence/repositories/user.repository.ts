@@ -1,4 +1,4 @@
-import { User } from "../../entities/user.interface";
+import { User } from "../../entities/user";
 import persistence from "../config/persistence";
 import UserModel from "../models/user.model";
 

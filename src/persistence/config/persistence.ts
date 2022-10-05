@@ -31,10 +31,4 @@ class Persistence {
 
 }
 
-
-
-
-
-
-
 export default new Persistence().persistence
