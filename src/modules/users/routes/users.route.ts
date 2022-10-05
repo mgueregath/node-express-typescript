@@ -9,6 +9,7 @@ class UsersRoute {
         this.router = Router();
         this.router.post('/', UserController.addUser);
         this.router.get('/', UserController.getUsers);
+        this.router.get('/search', UserController.searchUsers);
         this.router.get('/:id', UserController.getUser);
     }
 }
