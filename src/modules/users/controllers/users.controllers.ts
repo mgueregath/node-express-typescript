@@ -33,9 +33,13 @@ class UserController {
     }
 
     public addUser(request: Request, response: Response) {
-        let user = new User();
-        user.firstName = request.body.firstName;
-        user.lastName = request.body.lastName;
+
+        if (request.body.lastName == "" || request.body.lastName == null || request.body.lastName == undefined) {
+            
+            response.status(400).json({status: false, message: 'El primer nombre es requerido'});
+        }
+
+        let user = new User(request.body.firstName, request.body.lastName);
 
         UserRepository.newUser(user).then(users => {
             response.status(201).json({status: true, data: users});
